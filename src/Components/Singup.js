@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import validation from "./Validation.js";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Singup = () => {
   const [data, setdata] = useState({
     name: "",
@@ -12,7 +15,7 @@ const Singup = () => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     setErrors(validation(data));
-    console.log(Object.keys(errors).length);
+    console.log(Object.keys(errors));
   }, [data]);
 
   const changesHandeler = (e) => {
@@ -32,8 +35,10 @@ const Singup = () => {
   const submitHandeler = (e) => {
     e.preventDefault();
     if (!Object.keys(errors).length) {
+      notify1();
       console.log(data);
     } else {
+      notify2();
       setShowFocus({
         name: true,
         email: true,
@@ -43,6 +48,9 @@ const Singup = () => {
       });
     }
   };
+
+  const notify1 = () => toast.success("excellent");
+  const notify2 = () => toast.error("ooooppps!!");
   return (
     <div>
       <h1>Singup page</h1>
@@ -113,6 +121,7 @@ const Singup = () => {
           <button type="submit">Signup</button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
