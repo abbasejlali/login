@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import validation from "./validation";
 const Singup = () => {
   const [data, setdata] = useState({
     name: "",
@@ -9,13 +9,18 @@ const Singup = () => {
     isaccepted: false,
   });
 
+  const [errors, setErrors] = useState({});
+  useEffect(() => {
+    setErrors(validation(data));
+    console.log(data);
+  }, [data]);
+
   const changesHandeler = (e) => {
     if (e.target.name === "isaccepted") {
       setdata({ ...data, [e.target.name]: e.target.checked });
     } else {
       setdata({ ...data, [e.target.name]: e.target.value });
     }
-    console.log(data);
   };
   return (
     <div>
