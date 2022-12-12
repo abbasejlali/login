@@ -17,7 +17,11 @@ const validation = (data) => {
 
   if (!data.password) {
     errors.password = "password required";
+<<<<<<< HEAD
   } else if (data.password.lenghth < 6) {
+=======
+  } else if (data.password.length < 6) {
+>>>>>>> devepoe1
     errors.password = "The entered value is less than 6";
   } else {
     delete errors.password;
