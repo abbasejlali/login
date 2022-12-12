@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import validation from "./validation";
+import validation from "./Validation.js";
 const Singup = () => {
   const [data, setdata] = useState({
     name: "",
@@ -12,8 +12,6 @@ const Singup = () => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     setErrors(validation(data));
-    console.log(data.isaccepted);
-    // console.log(errors);
   }, [data]);
 
   const changesHandeler = (e) => {
@@ -71,6 +69,10 @@ const Singup = () => {
             value={data.isaccepted}
             onChange={changesHandeler}
           />
+        </div>
+        <div>
+          <a href="#">login</a>
+          <button type="submit">Signup</button>
         </div>
       </form>
     </div>

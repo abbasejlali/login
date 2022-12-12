@@ -31,10 +31,10 @@ const validation = (data) => {
     delete errors.confingpass;
   }
 
-  if (data.isaccepted) {
-    delete data.isaccepted;
-  } else {
+  if (!data.isaccepted) {
     data.isaccepted = "isaccepted required";
+  } else {
+    delete data.isaccepted;
   }
 
   return errors;
