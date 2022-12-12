@@ -21,6 +21,12 @@ const Singup = () => {
       setdata({ ...data, [e.target.name]: e.target.value });
     }
   };
+
+  const [ShowFocus, setShowFocus] = useState({});
+  const focusHandeler = (e) => {
+    setShowFocus({ ...ShowFocus, [e.target.name]: true });
+    console.log(ShowFocus);
+  };
   return (
     <div>
       <h1>Singup page</h1>
@@ -32,8 +38,9 @@ const Singup = () => {
             name="name"
             value={data.name}
             onChange={changesHandeler}
+            onFocus={focusHandeler}
           />
-          {errors.name && <span>{errors.name}</span>}
+          {errors.name && ShowFocus.name && <span>{errors.name}</span>}
         </div>
         <div>
           <label>Email</label>
@@ -42,8 +49,9 @@ const Singup = () => {
             name="email"
             value={data.email}
             onChange={changesHandeler}
+            onFocus={focusHandeler}
           />
-          {errors.email && <span>{errors.email}</span>}
+          {errors.email && ShowFocus.email && <span>{errors.email}</span>}
         </div>
         <div>
           <label>Password</label>
@@ -52,8 +60,11 @@ const Singup = () => {
             name="password"
             value={data.password}
             onChange={changesHandeler}
+            onFocus={focusHandeler}
           />
-          {errors.password && <span>{errors.password}</span>}
+          {errors.password && ShowFocus.password && (
+            <span>{errors.password}</span>
+          )}
         </div>
         <div>
           <label>Confing Password</label>
@@ -62,8 +73,11 @@ const Singup = () => {
             name="confingpass"
             value={data.confingpass}
             onChange={changesHandeler}
+            onFocus={focusHandeler}
           />
-          {errors.confingpass && <span>{errors.confingpass}</span>}
+          {errors.confingpass && ShowFocus.confingpass && (
+            <span>{errors.confingpass}</span>
+          )}
         </div>
         <div>
           <label>Accepted all anyone!?</label>
@@ -72,8 +86,11 @@ const Singup = () => {
             name="isaccepted"
             value={data.isaccepted}
             onChange={changesHandeler}
+            onFocus={focusHandeler}
           />
-          {errors.isaccepted && <span>{errors.isaccepted}</span>}
+          {errors.isaccepted && ShowFocus.isaccepted && (
+            <span>{errors.isaccepted}</span>
+          )}
         </div>
         <div>
           <a href="#">login</a>
