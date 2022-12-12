@@ -24,15 +24,15 @@ const validation = (data) => {
   }
 
   if (!data.confingpass) {
-    data.confingpass = "confingpass required";
+    errors.confingpass = "confingpass required";
   } else if (data.confingpass !== data.password) {
-    data.confingpass = "The entered values ​​are not equal";
+    errors.confingpass = "The entered values ​​are not equal";
   } else {
     delete errors.confingpass;
   }
 
   if (!data.isaccepted) {
-    data.isaccepted = "isaccepted required";
+    errors.isaccepted = "isaccepted required";
   } else {
     delete data.isaccepted;
   }

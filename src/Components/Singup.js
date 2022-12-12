@@ -33,6 +33,7 @@ const Singup = () => {
             value={data.name}
             onChange={changesHandeler}
           />
+          {errors.name && <span>{errors.name}</span>}
         </div>
         <div>
           <label>Email</label>
@@ -42,6 +43,7 @@ const Singup = () => {
             value={data.email}
             onChange={changesHandeler}
           />
+          {errors.email && <span>{errors.email}</span>}
         </div>
         <div>
           <label>Password</label>
@@ -51,6 +53,7 @@ const Singup = () => {
             value={data.password}
             onChange={changesHandeler}
           />
+          {errors.password && <span>{errors.password}</span>}
         </div>
         <div>
           <label>Confing Password</label>
@@ -60,6 +63,7 @@ const Singup = () => {
             value={data.confingpass}
             onChange={changesHandeler}
           />
+          {errors.confingpass && <span>{errors.confingpass}</span>}
         </div>
         <div>
           <label>Accepted all anyone!?</label>
@@ -69,6 +73,7 @@ const Singup = () => {
             value={data.isaccepted}
             onChange={changesHandeler}
           />
+          {errors.isaccepted && <span>{errors.isaccepted}</span>}
         </div>
         <div>
           <a href="#">login</a>
