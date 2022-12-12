@@ -12,6 +12,7 @@ const Singup = () => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     setErrors(validation(data));
+    console.log(Object.keys(errors).length);
   }, [data]);
 
   const changesHandeler = (e) => {
@@ -25,12 +26,27 @@ const Singup = () => {
   const [ShowFocus, setShowFocus] = useState({});
   const focusHandeler = (e) => {
     setShowFocus({ ...ShowFocus, [e.target.name]: true });
-    console.log(ShowFocus);
+    // console.log(ShowFocus);
+  };
+
+  const submitHandeler = (e) => {
+    e.preventDefault();
+    if (!Object.keys(errors).length) {
+      console.log(data);
+    } else {
+      setShowFocus({
+        name: true,
+        email: true,
+        password: true,
+        confingpass: true,
+        isaccepted: true,
+      });
+    }
   };
   return (
     <div>
       <h1>Singup page</h1>
-      <form>
+      <form onSubmit={submitHandeler}>
         <div>
           <label>Name</label>
           <input
