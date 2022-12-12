@@ -1,7 +1,7 @@
 const validation = (data) => {
   const errors = {};
 
-  if (!data.name.trim()) {
+  if (!data.name) {
     errors.name = "name required";
   } else {
     delete errors.name;
@@ -36,6 +36,8 @@ const validation = (data) => {
   } else {
     data.isaccepted = "isaccepted required";
   }
+
+  return errors;
 };
 
 export default validation;

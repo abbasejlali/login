@@ -12,7 +12,8 @@ const Singup = () => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     setErrors(validation(data));
-    console.log(data);
+    console.log(data.isaccepted);
+    // console.log(errors);
   }, [data]);
 
   const changesHandeler = (e) => {
