@@ -15,7 +15,7 @@ const Singup = () => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     setErrors(validation(data));
-    console.log(Object.keys(errors));
+    // console.log(Object.keys(errors));
   }, [data]);
 
   const changesHandeler = (e) => {
@@ -29,14 +29,14 @@ const Singup = () => {
   const [ShowFocus, setShowFocus] = useState({});
   const focusHandeler = (e) => {
     setShowFocus({ ...ShowFocus, [e.target.name]: true });
-    // console.log(ShowFocus);
+    console.log(ShowFocus);
   };
 
   const submitHandeler = (e) => {
     e.preventDefault();
     if (!Object.keys(errors).length) {
       notify1();
-      console.log(data);
+      //   console.log(data);
     } else {
       notify2();
       setShowFocus({
