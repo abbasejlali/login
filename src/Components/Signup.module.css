@@ -41,15 +41,18 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0.3rem 4rem 0.3rem 0;
+  min-height: 65px;
+  height: 100%;
 }
 .formMain > div > label {
   color: #5c5c5c;
+  margin-bottom: 0.5rem;
 }
 
 .formMain > div > input {
   max-width: 100%;
   width: 100%;
-  height: 30px;
+  height: 34px;
   border: 1px solid #7c7c7c;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -65,9 +68,45 @@ body {
 }
 .formMain > div > input:focus {
   border: 1px solid #1a73e8;
+  height: 34px !important;
+}
+.errorBorder {
+  border: 1px solid lightcoral !important;
 }
 
 .formMain > div > span {
   color: crimson;
   font-size: 14px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.divCheckbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.divCheckbox label {
+  color: #1a73e8 !important;
+}
+.divCheckbox input[type="checkbox"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #1a73e8;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin-top: 2rem;
+}
+
+.divCheckbox input[type="checkbox"]:checked {
+  background-color: #1a73e8;
 }

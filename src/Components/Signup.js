@@ -59,6 +59,11 @@ const Signup = () => {
         <div>
           <label>Name</label>
           <input
+            className={
+              errors.name && ShowFocus.name
+                ? styles.errorBorder
+                : styles.formMain
+            }
             type="text"
             name="name"
             value={data.name}
@@ -70,6 +75,11 @@ const Signup = () => {
         <div>
           <label>Email</label>
           <input
+            className={
+              errors.email && ShowFocus.email
+                ? styles.errorBorder
+                : styles.formMain
+            }
             type="email"
             name="email"
             value={data.email}
@@ -81,6 +91,11 @@ const Signup = () => {
         <div>
           <label>Password</label>
           <input
+            className={
+              errors.password && ShowFocus.password
+                ? styles.errorBorder
+                : styles.formMain
+            }
             type="password"
             name="password"
             value={data.password}
@@ -94,6 +109,11 @@ const Signup = () => {
         <div>
           <label>Confing Password</label>
           <input
+            className={
+              errors.confingpass && ShowFocus.confingpass
+                ? styles.errorBorder
+                : styles.formMain
+            }
             type="password"
             name="confingpass"
             value={data.confingpass}
@@ -105,14 +125,16 @@ const Signup = () => {
           )}
         </div>
         <div>
-          <label>Accepted all anyone!?</label>
-          <input
-            type="checkbox"
-            name="isaccepted"
-            value={data.isaccepted}
-            onChange={changesHandeler}
-            onFocus={focusHandeler}
-          />
+          <div className={styles.divCheckbox}>
+            <label>Accepted all anyone!?</label>
+            <input
+              type="checkbox"
+              name="isaccepted"
+              value={data.isaccepted}
+              onChange={changesHandeler}
+              onFocus={focusHandeler}
+            />
+          </div>
           {errors.isaccepted && ShowFocus.isaccepted && (
             <span>{errors.isaccepted}</span>
           )}
