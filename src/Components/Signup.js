@@ -3,6 +3,7 @@ import validation from "./Validation.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import styles from "./Signup.module.css";
 const Signup = () => {
   const [data, setdata] = useState({
     name: "",
@@ -52,8 +53,8 @@ const Signup = () => {
   const notify1 = () => toast.success("excellent");
   const notify2 = () => toast.error("ooooppps!!");
   return (
-    <div>
-      <h1>Singup page</h1>
+    <div className={styles.container}>
+      <h1>Signup</h1>
       <form onSubmit={submitHandeler}>
         <div>
           <label>Name</label>
