@@ -3,7 +3,7 @@ import validation from "./Validation.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Singup = () => {
+const Signup = () => {
   const [data, setdata] = useState({
     name: "",
     email: "",
@@ -126,4 +126,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;
