@@ -139,7 +139,7 @@ const Signup = () => {
             <span>{errors.isaccepted}</span>
           )}
         </div>
-        <div>
+        <div className={styles.buttonDiv}>
           <a href="#">login</a>
           <button type="submit">Signup</button>
         </div>
